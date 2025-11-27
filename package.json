@@ -24,12 +24,27 @@
     "aberlaas": "2.19.0"
   },
   "scripts": {
+    "setup:add-episode": "node ./scripts/setup/add-episode.js",
+    "setup:download-audio": "node ./scripts/setup/download-audio.js",
+    "setup:download-video": "node ./scripts/setup/download-video.js",
+    "update:viewcount": "node ./scripts/update/viewcount.js",
+    "update:heatmap": "node ./scripts/update/heatmap.js",
+    "update:media": "node ./scripts/update/media.js",
+    "generate:episodes": "node ./scripts/generate/episodes.js",
+    "deploy:media": "./scripts/deploy/media",
+    "deploy:algolia": "node ./scripts/deploy/algolia.js",
     "ci": "./scripts/ci",
-    "compress": "./scripts/compress",
+    "ci:weekly": "./scripts/ci-weekly",
     "lint": "./scripts/lint",
     "lint:fix": "./scripts/lint-fix",
     "test": "./scripts/test",
-    "test:watch": "./scripts/test-watch",
-    "release": "./scripts/release"
+    "test:watch": "./scripts/test-watch"
+  },
+  "dependencies": {
+    "algolia-indexing": "2.0.0",
+    "algoliasearch": "5.45.0",
+    "firost": "5.3.0",
+    "golgoth": "3.0.0",
+    "imoen": "2.0.0"
   }
 }

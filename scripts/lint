@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-aberlaas lint "${@:-$INIT_CWD}"
+arg=${@:-.}
+
+yarn run aberlaas lint ${arg}
