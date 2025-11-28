@@ -1,7 +1,7 @@
 /**
  * Generate media files (thumbnails + previews) and metadata
  * Creates media.json with dimensions/LQIP for each subtitle timestamp
- * Creates symlinks to brefsearch-media repository
+ * Creates symlinks to crsearch-media repository
  * Usage: yarn run generate:media [metadata.json files...]
  */
 import { exists, mkdirp, symlink, writeJson } from 'firost';
@@ -21,12 +21,14 @@ import {
 import { getSubtitles } from '../../lib/subtitle.js';
 import { buildImage } from '../../lib/docker.js';
 import { extractPreview, extractThumbnail } from '../../lib/ffmpeg.js';
+import config from '../../lib/config.js';
 
 const files = process.argv.slice(2);
 
 await buildImage();
 
 const mediaRepoDir = getMediaRepoDir();
+const mediaRepoName = config.media.repoName;
 
 await forEachEpisode(
   async (episode) => {
@@ -38,7 +40,7 @@ await forEachEpisode(
     const media = {};
     const computedDir = getComputedDir();
 
-    // Add symlinks to brefsearch-media
+    // Add symlinks to crsearch-media
     await createSymlinks(episode);
 
     await pMap(
@@ -94,12 +96,12 @@ async function createSymlinks(episode) {
   await mkdirp(mediaPreviews);
 
   // Create relative symlinks from computed to media
-  // data/computed/{episode}/thumbnails -> ../../../../brefsearch-media/media/{episode}/thumbnails
+  // data/computed/{episode}/thumbnails -> ../../../../crsearch-media/media/{episode}/thumbnails
   const computedThumbnails = getThumbnailsDir(episode);
   const computedPreviews = getPreviewsDir(episode);
 
-  const relativeThumbnails = `../../../../brefsearch-media/media/${episode.slug}/thumbnails`;
-  const relativePreviews = `../../../../brefsearch-media/media/${episode.slug}/previews`;
+  const relativeThumbnails = `../../../../${mediaRepoName}/media/${episode.slug}/thumbnails`;
+  const relativePreviews = `../../../../${mediaRepoName}/media/${episode.slug}/previews`;
 
   await symlink(computedThumbnails, relativeThumbnails);
   await symlink(computedPreviews, relativePreviews);

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-cd ../brefsearch-media
+cd ../crsearch-media
 rsync \
   --chmod=Du=rwx,Dg=rwx,Do=rx,Fu=rw,Fg=rw,Fo=r \
   --verbose \
@@ -12,4 +12,4 @@ rsync \
   --copy-links \
   --compress \
   ./media/* \
-  pixelastic:/var/www/assets.pixelastic.com/brefsearch
+  pixelastic:/var/www/assets.pixelastic.com/crsearch

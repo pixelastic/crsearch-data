@@ -8,12 +8,12 @@ GIT_ROOT=$(git rev-parse --show-toplevel)
 
 # Get media repository directory (sibling to current repo)
 PARENT_DIR=$(dirname "$GIT_ROOT")
-MEDIA_ROOT="$PARENT_DIR/brefsearch-media"
+MEDIA_ROOT="$PARENT_DIR/crsearch-media"
 
 # Run yt-dlp in Docker, mounting both repos explicitly
 docker run --rm \
-  -v "$GIT_ROOT:/workspace/brefsearch-data" \
-  -v "$MEDIA_ROOT:/workspace/brefsearch-media" \
-  -w /workspace/brefsearch-data \
-  brefsearch-tools \
+  -v "$GIT_ROOT:/workspace/crsearch-data" \
+  -v "$MEDIA_ROOT:/workspace/crsearch-media" \
+  -w /workspace/crsearch-data \
+  crsearch-data \
   "yt-dlp $*"
