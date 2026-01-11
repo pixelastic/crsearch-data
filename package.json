@@ -43,7 +43,7 @@
   "dependencies": {
     "algolia-indexing": "2.0.0",
     "algoliasearch": "5.46.2",
-    "firost": "5.3.0",
+    "firost": "5.4.0",
     "golgoth": "3.0.0",
     "imoen": "2.0.0"
   }
