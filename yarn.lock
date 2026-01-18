@@ -2861,7 +2861,7 @@ __metadata:
     aberlaas: "npm:2.19.0"
     algolia-indexing: "npm:2.0.0"
     algoliasearch: "npm:5.46.3"
-    firost: "npm:5.4.0"
+    firost: "npm:5.4.3"
     golgoth: "npm:3.0.0"
     imoen: "npm:2.0.0"
   languageName: unknown
@@ -4090,9 +4090,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"firost@npm:5.4.0":
-  version: 5.4.0
-  resolution: "firost@npm:5.4.0"
+"firost@npm:5.4.3":
+  version: 5.4.3
+  resolution: "firost@npm:5.4.3"
   dependencies:
     "@inquirer/prompts": "npm:7.10.1"
     chokidar: "npm:4.0.3"
@@ -4114,7 +4114,7 @@ __metadata:
     temp-dir: "npm:3.0.0"
     untildify: "npm:5.0.0"
     which: "npm:5.0.0"
-  checksum: 10c0/df040698eb8b9f1f859f89ca776fc5821ffb76e98e08f7b53f17cb40dba3a3711e8f51db3f2afd0dbdea646cc70cf2a89fbc27f9f1007b162e4421da218749e8
+  checksum: 10c0/c76b146417a34c3ce7ac113b48eb8e9e254c04035b8602e839ff6ca9df9d002979614df756a5a3a49647470ed3bf6e1a2e04fce7b84792c68e7255c4a1790846
   languageName: node
   linkType: hard
 
