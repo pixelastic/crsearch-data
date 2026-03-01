@@ -21,7 +21,7 @@
   },
   "main": "./lib/main.js",
   "devDependencies": {
-    "aberlaas": "2.19.0"
+    "aberlaas": "2.24.0"
   },
   "scripts": {
     "setup:add-episode": "node ./scripts/setup/add-episode.js",
@@ -43,8 +43,8 @@
   "dependencies": {
     "algolia-indexing": "2.0.0",
     "algoliasearch": "5.49.0",
-    "firost": "5.5.1",
-    "golgoth": "3.0.0",
+    "firost": "5.7.0",
+    "golgoth": "3.1.0",
     "imoen": "2.0.0"
   }
 }
